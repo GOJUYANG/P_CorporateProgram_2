@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1131</width>
-    <height>816</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page_login">
     <widget class="QWidget" name="layoutWidget">
@@ -349,14 +349,14 @@ padding:5px;</string>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>94</width>
+          <width>160</width>
           <height>14</height>
          </size>
         </property>
        </spacer>
       </item>
       <item>
-       <widget class="QWidget" name="widget_chat" native="true">
+       <widget class="QWidget" name="widget_setting_2" native="true">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -380,7 +380,7 @@ padding:5px;</string>
 border-radius:10px;
 padding:5px;</string>
         </property>
-        <widget class="QLabel" name="lb_chat">
+        <widget class="QLabel" name="lb_upload">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -393,7 +393,7 @@ padding:5px;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../IMG/TALK.png</pixmap>
+          <pixmap>../IMG/pencil.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -401,133 +401,6 @@ padding:5px;</string>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
-        </widget>
-        <widget class="QWidget" name="widget_cnt" native="true">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>0</y>
-           <width>22</width>
-           <height>22</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"> background-color: red;
- border-style: solid;
- border-width:1px;
- border-radius:5px;
- max-width:10px;
- max-height:10px;
- min-width:10px;
- min-height:10px;</string>
-         </property>
-         <widget class="QLabel" name="lb_msg_cnt">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>22</width>
-            <height>22</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color:white;</string>
-          </property>
-          <property name="text">
-           <string>1</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </widget>
-       </widget>
-      </item>
-      <item>
-       <widget class="QWidget" name="widget_alarm" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>70</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>70</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border : 1px solid gray;
-border-radius:10px;
-padding:5px;</string>
-        </property>
-        <widget class="QLabel" name="lb_alram">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>70</width>
-           <height>61</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap>../IMG/alarm.png</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>true</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QWidget" name="widget_alram" native="true">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>0</y>
-           <width>22</width>
-           <height>22</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"> background-color: red;
- border-style: solid;
- border-width:1px;
- border-radius:5px;
- max-width:10px;
- max-height:10px;
- min-width:10px;
- min-height:10px;</string>
-         </property>
-         <widget class="QLabel" name="lb_alram_cnt">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>22</width>
-            <height>22</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color:white;</string>
-          </property>
-          <property name="text">
-           <string>1</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
         </widget>
        </widget>
       </item>
@@ -618,7 +491,7 @@ padding:5px;</string>
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page_home">
     <property name="styleSheet">
@@ -995,7 +868,7 @@ padding:5px;</string>
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="page_6">
+      <widget class="QWidget" name="page_main_home">
        <widget class="QGroupBox" name="groupBox">
         <property name="geometry">
          <rect>
@@ -2110,7 +1983,7 @@ padding:5px;</string>
         </widget>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_7">
+      <widget class="QWidget" name="page_flow_list">
        <widget class="QScrollArea" name="scrollArea_2">
         <property name="geometry">
          <rect>
@@ -2166,14 +2039,14 @@ padding:5px;</string>
         </widget>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_8">
+      <widget class="QWidget" name="page_calender">
        <widget class="QTableWidget" name="work_table">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>20</y>
+          <y>60</y>
           <width>711</width>
-          <height>331</height>
+          <height>291</height>
          </rect>
         </property>
         <property name="font">
@@ -2386,7 +2259,7 @@ QScrollBar::handle:vertical:pressed {
          </property>
         </item>
        </widget>
-       <widget class="QPushButton" name="pushButton_7">
+       <widget class="QPushButton" name="btn_done">
         <property name="geometry">
          <rect>
           <x>630</x>
@@ -2408,7 +2281,7 @@ color:white;</string>
          <string>완료</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="ldt_work">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -2423,7 +2296,7 @@ color:white;</string>
          </font>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_8">
+       <widget class="QPushButton" name="btn_ing">
         <property name="geometry">
          <rect>
           <x>540</x>
@@ -2443,6 +2316,134 @@ color:white;</string>
         </property>
         <property name="text">
          <string>진행</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="ldt_project_start">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>10</y>
+          <width>141</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>평창체 Regular</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border : 1px solid gray;
+border-radius:10px;
+padding:5px;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>230724</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>10</y>
+          <width>91</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>평창체 Regular</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border : 1px solid gray;
+border-radius:10px;
+padding:5px;</string>
+        </property>
+        <property name="text">
+         <string>Project 시작</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_setting">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>10</y>
+          <width>91</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>평창체 Regular</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(35, 101, 255);
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>세팅</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>10</y>
+          <width>91</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>평창체 Regular</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border : 1px solid gray;
+border-radius:10px;
+padding:5px;</string>
+        </property>
+        <property name="text">
+         <string>Project 마감</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="ldt_project_end">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>10</y>
+          <width>141</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>평창체 Regular</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border : 1px solid gray;
+border-radius:10px;
+padding:5px;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>230729</string>
         </property>
        </widget>
       </widget>
@@ -2711,7 +2712,7 @@ background-color:white;</string>
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>../../../.designer/IMG/paper-plane.png</normaloff>../../../.designer/IMG/paper-plane.png</iconset>
+             <normaloff>../IMG/paper-plane.png</normaloff>../IMG/paper-plane.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -2728,35 +2729,82 @@ background-color:white;</string>
     </widget>
    </widget>
    <widget class="QWidget" name="board">
-    <widget class="QWidget" name="layoutWidget_4">
+    <widget class="Line" name="line">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>50</y>
+       <y>30</y>
        <width>1111</width>
-       <height>671</height>
+       <height>21</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_13">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="ldt_title">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>1111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>평창체 Regular</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string>title</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>1111</width>
+       <height>651</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <layout class="QVBoxLayout" name="code_vlayout">
-        <property name="spacing">
-         <number>0</number>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="widgetResizable">
+         <bool>true</bool>
         </property>
-       </layout>
-      </item>
-      <item>
-       <spacer name="verticalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>1088</width>
-          <height>268</height>
-         </size>
-        </property>
-       </spacer>
+        <widget class="QWidget" name="scrollAreaWidgetContents_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1129</width>
+           <height>365</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_20">
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>1108</width>
+              <height>344</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </widget>
       </item>
       <item>
        <widget class="QGroupBox" name="groupBox_4">
@@ -2772,6 +2820,12 @@ background-color:white;</string>
           <height>259</height>
          </size>
         </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>300</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>평창체 Regular</family>
@@ -2781,13 +2835,13 @@ background-color:white;</string>
         <property name="title">
          <string>Your Answer</string>
         </property>
-        <widget class="QTextEdit" name="ted_code">
+        <widget class="QTextEdit" name="text_code">
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>60</y>
+           <y>110</y>
            <width>1091</width>
-           <height>191</height>
+           <height>131</height>
           </rect>
          </property>
         </widget>
@@ -2987,53 +3041,25 @@ padding:5px;</string>
           </widget>
          </widget>
         </widget>
+        <widget class="QLineEdit" name="ldt_comment">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>1091</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="placeholderText">
+          <string>댓글</string>
+         </property>
+        </widget>
        </widget>
       </item>
      </layout>
-    </widget>
-    <widget class="Line" name="line">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>1111</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lb_title">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>1109</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>평창체 Regular</family>
-       <pointsize>23</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Title</string>
-     </property>
     </widget>
    </widget>
   </widget>

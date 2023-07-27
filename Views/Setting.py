@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QPixmap
 
 from Server.DataRead import DataClass
+from Views.login import DlgLogin
 
 def resource_path(relative_path):
     base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
@@ -18,6 +19,10 @@ class DlgSetting(QDialog, dlg_class):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+        # --DB연동
+        self.db = DataClass()
+        # self.login = DlgLogin()
 
         # 변수
         self.img = 'img_profile_1'
@@ -36,17 +41,24 @@ class DlgSetting(QDialog, dlg_class):
         self.btn_notice.clicked.connect(lambda: self.stack_setting.setCurrentWidget(self.page_notice))
         self.btn_profile.clicked.connect(lambda: self.stack_setting.setCurrentWidget(self.page_profile))
         self.btn_logout.clicked.connect(self.close_screen)
+        self.btn_pwd.clicked.connect(lambda: self.stack_setting.setCurrentWidget(self.page_pwd))
 
         # 프로필
         self.btn_img_edit.clicked.connect(lambda: self.stack_setting.setCurrentWidget(self.page_img_choice))
         self.btn_profile_save.clicked.connect(self.update_user_state)
-        self.btn_choice.clicked.connect(self.change_profile_img)
+        self.btn_choice.clicked.connect(lambda: self.stack_setting.setCurrentWidget(self.page_pwd))
+        self.btn_pwd_save.clicked.connect(self.change_pwd)
 
         # ui 설정
-        self.init_setting()
+        # self.init_setting()
 
-    def init_setting(self):
-        self.lbl_img_profile.setPixmap(QPixmap(f'../IMG/profile/{self.img}.png'))
+
+    # def init_setting(self):
+    #     pw, img, name, state = self.login.req_login()
+    #     self.lbl_img_profile.setPixmap(QPixmap(f'../IMG/profile/{img}.png'))
+    #     self.ldt_name.setText(f"{name}")
+    #     self.lineEdit_state.setText(f"{state}")
+    #     self.ldt_before_pw.setText(f"{pw}")
 
     def set_users_login_info(self, login_list):
         for k, v in enumerate(login_list):
@@ -74,6 +86,10 @@ class DlgSetting(QDialog, dlg_class):
         state_ = self.lineEdit_state.text()
         return img_, name_, state_
 
+    def change_pwd(self):
+        name_ = self.ldt_name.text()
+        pw_ = self.ldt_after_pwd.text()
+        self.db.update_user_pw(pw_, name_)
 
     def close_screen(self):
         self.close()

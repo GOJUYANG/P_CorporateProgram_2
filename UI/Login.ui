@@ -53,43 +53,18 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="1" colspan="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="7" column="0" colspan="4">
-       <widget class="QLineEdit" name="ldt_pwd">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>230</width>
-          <height>35</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>35</height>
-         </size>
-        </property>
+      <item row="8" column="0" colspan="3">
+       <widget class="QLabel" name="lb_warning_pwd">
         <property name="font">
          <font>
           <family>평창체 Regular</family>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(170, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>비밀번호를 입력하지 않았습니다.</string>
         </property>
        </widget>
       </item>
@@ -120,60 +95,6 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="minimumSize">
-         <size>
-          <width>71</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>71</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>평창체 Regular</family>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Password</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QPushButton" name="btn_close">
-        <property name="minimumSize">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>평창체 Regular</family>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(98, 98, 98);
-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>close</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="minimumSize">
@@ -197,21 +118,6 @@ color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
          <string>Email</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0" colspan="3">
-       <widget class="QLabel" name="lb_warning_pwd">
-        <property name="font">
-         <font>
-          <family>평창체 Regular</family>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(170, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>비밀번호를 입력하지 않았습니다.</string>
         </property>
        </widget>
       </item>
@@ -265,35 +171,148 @@ color: rgb(255, 255, 255);</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="2" colspan="2">
-       <widget class="QLabel" name="lb_forgot_pwd">
+      <item row="4" column="0" colspan="4">
+       <widget class="QWidget" name="widget" native="true">
         <property name="minimumSize">
          <size>
-          <width>71</width>
+          <width>0</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>5000</width>
+          <height>40</height>
+         </size>
+        </property>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>71</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>71</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>71</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>평창체 Regular</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Password</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btn_pwd">
+         <property name="geometry">
+          <rect>
+           <x>124</x>
+           <y>0</y>
+           <width>131</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>평창체 Regular</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 162, 227);</string>
+         </property>
+         <property name="text">
+          <string>forgot password?</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="7" column="0" colspan="4">
+       <widget class="QLineEdit" name="ldt_pwd">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>230</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>평창체 Regular</family>
+         </font>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="btn_close">
+        <property name="minimumSize">
+         <size>
+          <width>40</width>
           <height>20</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>11111111</width>
+          <width>20</width>
           <height>20</height>
          </size>
         </property>
         <property name="font">
          <font>
           <family>평창체 Regular</family>
-          <weight>75</weight>
-          <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 162, 227);</string>
+         <string notr="true">background-color: rgb(98, 98, 98);
+color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>Forgot password?</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         <string>close</string>
         </property>
        </widget>
       </item>

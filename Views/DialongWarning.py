@@ -65,4 +65,13 @@ class DialogWarning(QDialog, dlg_class):
             self.lbl_text.setText('상태메세지는 최대 20자까지 가능합니다.')
         elif t_type == 'email_no_check':
             self.lbl_text.setText('이메일 인증을 진행 해주세요.')
-
+        elif t_type == 'save_team':
+            self.lbl_text.setText('팀 저장 완료')
+        elif t_type == 'upload_only_code':
+            self.lbl_text.setText('댓글 없이 올리시겠습니까?')
+        elif t_type == 'upload_only_comment':
+            self.lbl_text.setText('코드 없이 올리시겠습니까?')
+        elif t_type == 'len_over_date':
+            self.lbl_text.setText('날짜는 230724 와 같이 입력해주세요')
+        elif t_type == 'fill_up_ldt':
+            self.lbl_text.setText('한 일을 적어 주세요')

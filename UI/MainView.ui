@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
-  <widget class="QStackedWidget" name="stackedWidget">
+  <widget class="QStackedWidget" name="stackedWidget_title">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page_login">
     <widget class="QWidget" name="layoutWidget">
@@ -491,7 +491,7 @@ padding:5px;</string>
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page_home">
     <property name="styleSheet">
@@ -858,7 +858,7 @@ padding:5px;</string>
      <property name="childrenCollapsible">
       <bool>true</bool>
      </property>
-     <widget class="QStackedWidget" name="stackedWidget_2">
+     <widget class="QStackedWidget" name="stackedWidget_main_2">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -866,9 +866,9 @@ padding:5px;</string>
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
-      <widget class="QWidget" name="page_main_home">
+      <widget class="QWidget" name="page_main">
        <widget class="QGroupBox" name="groupBox">
         <property name="geometry">
          <rect>
@@ -954,9 +954,6 @@ padding:5px;</string>
              <property name="text">
               <string/>
              </property>
-             <property name="pixmap">
-              <pixmap>../IMG/profile/captain_female.png</pixmap>
-             </property>
              <property name="scaledContents">
               <bool>true</bool>
              </property>
@@ -1004,7 +1001,7 @@ padding:5px;</string>
               <item>
                <widget class="QLabel" name="lb_captain_name">
                 <property name="text">
-                 <string>고주양</string>
+                 <string>captain name</string>
                 </property>
                </widget>
               </item>
@@ -1043,7 +1040,7 @@ padding:5px;</string>
               <item>
                <widget class="QLabel" name="lb_captain_state">
                 <property name="text">
-                 <string>eval</string>
+                 <string>state</string>
                 </property>
                </widget>
               </item>
@@ -1171,7 +1168,7 @@ padding:5px;</string>
               <item>
                <widget class="QLabel" name="lb_crew_name_2">
                 <property name="text">
-                 <string>이종혁</string>
+                 <string>crew name</string>
                 </property>
                </widget>
               </item>
@@ -1210,7 +1207,7 @@ padding:5px;</string>
               <item>
                <widget class="QLabel" name="lb_crew_state_2">
                 <property name="text">
-                 <string> 간절히 쉬고싶다</string>
+                 <string>state</string>
                 </property>
                </widget>
               </item>
@@ -1338,7 +1335,7 @@ padding:5px;</string>
               <item>
                <widget class="QLabel" name="lb_crew_name_1">
                 <property name="text">
-                 <string>박호현</string>
+                 <string>crew name</string>
                 </property>
                </widget>
               </item>
@@ -1377,7 +1374,7 @@ padding:5px;</string>
               <item>
                <widget class="QLabel" name="lb_crew_state_1">
                 <property name="text">
-                 <string>몰루~</string>
+                 <string>state</string>
                 </property>
                </widget>
               </item>
@@ -1505,7 +1502,7 @@ padding:5px;</string>
               <item>
                <widget class="QLabel" name="lb_crew_name_3">
                 <property name="text">
-                 <string>박소연</string>
+                 <string>crew name</string>
                 </property>
                </widget>
               </item>
@@ -1544,7 +1541,7 @@ padding:5px;</string>
               <item>
                <widget class="QLabel" name="lb_crew_state_3">
                 <property name="text">
-                 <string>잉잉잉</string>
+                 <string>state</string>
                 </property>
                </widget>
               </item>
@@ -1983,7 +1980,7 @@ padding:5px;</string>
         </widget>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_flow_list">
+      <widget class="QWidget" name="page_list">
        <widget class="QScrollArea" name="scrollArea_2">
         <property name="geometry">
          <rect>
@@ -2096,9 +2093,42 @@ padding:5px;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(201, 241, 255);
-selection-background-color: yellow;
-color:black;</string>
+         <string notr="true">#calendarWidget QWidget{
+	alternate-background-color: white;
+}
+#qt_calendar_navigationbar{
+	background-color:blue;
+	color:black;
+	border : 2px solid #B8E2FF;
+	border-bottom:0px;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+}
+#qt_calendar_calendarview{
+	background-color: rgb(201, 241, 255);
+	selection-background-color: yellow;
+	color:black;
+}
+#qt_calendar_yearbutton{
+	color:#000;
+	margin:5px;
+	border-radius:5px;
+	padding: 0 20px;
+}
+#qt_calendar_monthbutton{
+	color:#000;
+	margin:5px;
+	border-radius:5px;
+	padding: 0 20px;
+}
+qt_calendar_prevmonth{
+	margin-right:5px;
+	img:url(:/icon/arrow-19-48.ico);
+}
+qt_calendar_nextmonth{
+	margin-right:5px;
+	img:url(:/icon/arrow-119-48.ico);
+}</string>
         </property>
        </widget>
        <widget class="QListWidget" name="listWidget">
@@ -2321,7 +2351,7 @@ color:white;</string>
        <widget class="QLineEdit" name="ldt_project_start">
         <property name="geometry">
          <rect>
-          <x>220</x>
+          <x>330</x>
           <y>10</y>
           <width>141</width>
           <height>41</height>
@@ -2348,7 +2378,7 @@ padding:5px;</string>
        <widget class="QLabel" name="label_8">
         <property name="geometry">
          <rect>
-          <x>120</x>
+          <x>230</x>
           <y>10</y>
           <width>91</width>
           <height>41</height>
@@ -2371,32 +2401,10 @@ padding:5px;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QPushButton" name="btn_setting">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>10</y>
-          <width>91</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>평창체 Regular</family>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(35, 101, 255);
-color:white;</string>
-        </property>
-        <property name="text">
-         <string>세팅</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_9">
         <property name="geometry">
          <rect>
-          <x>370</x>
+          <x>480</x>
           <y>10</y>
           <width>91</width>
           <height>41</height>
@@ -2422,7 +2430,7 @@ padding:5px;</string>
        <widget class="QLineEdit" name="ldt_project_end">
         <property name="geometry">
          <rect>
-          <x>470</x>
+          <x>580</x>
           <y>10</y>
           <width>141</width>
           <height>41</height>
@@ -2764,7 +2772,7 @@ background-color:white;</string>
       <string>title</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -2784,7 +2792,7 @@ background-color:white;</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>1129</width>
+           <width>1126</width>
            <height>365</height>
           </rect>
          </property>

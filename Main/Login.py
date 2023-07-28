@@ -1,14 +1,14 @@
-import pickle
 import sys
 
 from PyQt5.Qt import *
-from PyQt5.QtWidgets import QWidget, QApplication
+from PyQt5.QtWidgets import QApplication
 from PyQt5.uic import loadUi
 
 class LoginFunction(QDialog):
     def __init__(self, soc):
         super().__init__()
         loadUi('../UI/Login.ui', self)
+
         self.controller = soc
         self._default_set()
         self.data_ = None

@@ -1,16 +1,17 @@
 import sys
-from PyQt5 import uic
+from PyQt5.uic import loadUi
+
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 
 from Views.DialongWarning import DialogWarning
 from Server.DataRead import DataClass
-form_class = uic.loadUiType('../UI/ui_server.ui')[0]
+from Server.ServerSocket import ServerMain
 
-class ServerScreen(QWidget, form_class):
+class ServerScreen(QWidget):
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
+        loadUi('../UI/ui_server.ui', self)
 
         self.checkBoxList_1 = []
         self.checkBoxList_2 = []
@@ -19,16 +20,33 @@ class ServerScreen(QWidget, form_class):
         self.team_list = []
         self.captain = ""
 
+        # 서버 소켓과 연결
+        self.s = ServerMain(self)
+        # self.ip = socket.gethostbyname(socket.gethostname())
+        # self.port = 7001
+
         # --- DB연결
         self.db = DataClass()
         self.dlg = DialogWarning()
 
         # --- 관리자화면
+        self.server_btn.clicked.connect(self.server_start)
         self.btn_add.clicked.connect(self.insert_table_widget)
         self.btn_crew.clicked.connect(self.insert_crew)
         self.btn_captain.clicked.connect(self.insert_captain)
         self.btn_team.clicked.connect(self.return_team)
         self.btn_clear.clicked.connect(self.ldt_clear)
+
+    def server_start(self, state):
+        if state:
+            ip = self.ldt_ip.text()
+            port = self.ldt_port.text()
+            if self.s.start(ip, int(port)):
+                self.server_btn.setText('서버 종료')
+        else:
+            self.s.stop()
+            self.msg.clear()
+            self.server_btn.setText('서버 실행')
 
     def insert_table_widget(self):
         """관리자 view 내 테이블 위젯 명단 업로드"""

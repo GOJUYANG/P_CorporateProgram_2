@@ -1,29 +1,15 @@
-import sys, os
-from PyQt5 import uic
+from PyQt5.uic import loadUi
 
 from PyQt5.QtWidgets import QDialog
 from PyQt5.QtCore import Qt
 
-def resource_path(relative_path):
-    base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
-    return os.path.join(base_path, relative_path)
-
-# 메인화면
-main = resource_path('../UI/warning_dialog.ui')
-dlg_class = uic.loadUiType(main)[0]
-
-class DialogWarning(QDialog, dlg_class):
+class DialogWarning(QDialog):
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
+        loadUi('../UI/MainView.ui', self)
 
         self.setWindowFlags(Qt.FramelessWindowHint)
-
         self.connect_event()
-
-    # 아니오, 닫기 눌렀을 때
-    def close_screen(self):
-        self.close()
 
     # 이벤트 연결
     def connect_event(self):
@@ -34,10 +20,11 @@ class DialogWarning(QDialog, dlg_class):
         self.btn_close.clicked.connect(self.close_screen)
         self.btn_no.clicked.connect(self.close_screen)
 
-    # 다이얼로그 타입 설정
-    # bt_cnt : 버튼 수량
-    # t_type : 다이얼로그 타입
-    def set_dialog_type(self, bt_cnt: int, t_type="", text=""):
+    # 아니오, 닫기 눌렀을 때
+    def close_screen(self):
+        self.close()
+
+    def set_dialog_type(self, bt_cnt: int, t_type=""):
         if bt_cnt == 1:
             self.layout_double.setVisible(False)
             self.btn_single.setVisible(True)
@@ -75,3 +62,5 @@ class DialogWarning(QDialog, dlg_class):
             self.lbl_text.setText('날짜는 230724 와 같이 입력해주세요')
         elif t_type == 'fill_up_ldt':
             self.lbl_text.setText('한 일을 적어 주세요')
+        elif t_type == 'sure_to_logout':
+            self.lbl_text.setText('로그 아웃 하시겠습니까?')

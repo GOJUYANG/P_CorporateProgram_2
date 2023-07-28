@@ -1,28 +1,21 @@
 import sys, os
-from PyQt5 import uic
+from PyQt5.uic import loadUi
 
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QPixmap
 
 from Server.DataRead import DataClass
-from Views.login import DlgLogin
+from Views.DialongWarning import DialogWarning
 
-def resource_path(relative_path):
-    base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
-    return os.path.join(base_path, relative_path)
-
-# 메인화면
-main = resource_path('../UI/setting.ui')
-dlg_class = uic.loadUiType(main)[0]
-
-class DlgSetting(QDialog, dlg_class):
+class DlgSetting(QDialog):
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
+        loadUi('../UI/setting.ui', self)
 
         # --DB연동
         self.db = DataClass()
-        # self.login = DlgLogin()
+
+        self.dlg = DialogWarning()
 
         # 변수
         self.img = 'img_profile_1'
@@ -45,13 +38,12 @@ class DlgSetting(QDialog, dlg_class):
 
         # 프로필
         self.btn_img_edit.clicked.connect(lambda: self.stack_setting.setCurrentWidget(self.page_img_choice))
+        self.btn_choice.clicked.connect(self.change_profile_img)
         self.btn_profile_save.clicked.connect(self.update_user_state)
-        self.btn_choice.clicked.connect(lambda: self.stack_setting.setCurrentWidget(self.page_pwd))
         self.btn_pwd_save.clicked.connect(self.change_pwd)
 
         # ui 설정
         # self.init_setting()
-
 
     # def init_setting(self):
     #     pw, img, name, state = self.login.req_login()
@@ -84,6 +76,9 @@ class DlgSetting(QDialog, dlg_class):
         img_ = self.img
         name_ = self.ldt_name.text()
         state_ = self.lineEdit_state.text()
+        if len(state_) >= 20:
+            self.dlg.set_dialog_type(1, "state_len_limit")
+            self.dlg.exec()
         return img_, name_, state_
 
     def change_pwd(self):

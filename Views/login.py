@@ -1,6 +1,5 @@
 import sys, os
 from PyQt5 import uic
-from PyQt5.QtWidgets import QDialog
 from PyQt5.Qt import *
 
 from Views.DialongWarning import DialogWarning
@@ -39,16 +38,34 @@ class DlgLogin(QDialog, dlg_class):
         self.user_pw = ""
 
         # 버튼 이벤트
-        self.btn_close.clicked.connect(self.close_popup)
-        self.btn_login.clicked.connect(self.req_login)
+        self._btn_connect()
 
-        # 라벨 이벤트
-        self.btn_pwd.clicked.connect(self.click_forgot_password)
+        self._default_set()
 
         # 클래스 호출
         self.dlg = DialogWarning()
         self.db = DataClass()
     """▼추가한 함수▼"""
+
+    def _btn_connect(self):
+        """버튼 연결 기능"""
+        self.btn_login.clicked.connect(self.lineEdit_Func)
+        self.btn_close.clicked.connect(self.close)
+
+        self.ldt_email.returnPressed.connect(self.lineEdit_Func)
+        self.ldt_pwd.returnPressed.connect(self.lineEdit_Func)
+        self.ldt_email.textChanged.connect(self.lineEdit_text_check)
+
+    def _default_set(self):
+        """윈도우 초기 설정값"""
+        self._controller_connect_Function()
+        self._btn_connect()
+        self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint)
+        self.ldt_email.setFocus()
+
+    def _controller_connect_Function(self):
+        """컨트롤러와 이어주는 기능"""
+        self.controller.db_signal.connect(self.recv_from_Control)
 
     @pyqtSlot(list)
     def recv_from_Control(self, recv_list):
@@ -73,25 +90,8 @@ class DlgLogin(QDialog, dlg_class):
                 self.label_4.setText("비밀번호가 일치하지 않습니다.")
                 self.lineEdit_2.clear()
                 self.lineEdit_2.setFocus()
-    def _default_set(self):
-        """윈도우 초기 설정값"""
-        self._controller_connect_Function()
-        self._btn_connect()
-        self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint)
-        self.ldt_email.setFocus()
 
-    def _controller_connect_Function(self):
-        """컨트롤러와 이어주는 기능"""
-        self.controller.db_signal.connect(self.recv_from_Control)
 
-    def _btn_connect(self):
-        """버튼 연결 기능"""
-        self.btn_login.clicked.connect(self.lineEdit_Func)
-        self.btn_close.clicked.connect(self.close)
-
-        self.ldt_email.returnPressed.connect(self.lineEdit_Func)
-        self.ldt_pwd.returnPressed.connect(self.lineEdit_Func)
-        self.ldt_email.textChanged.connect(self.lineEdit_text_check)
     def lineEdit_Func(self):
         """라인 에딧 텍스트의 값을 엔터시 클라이언트를 통해 서버에게 값을 전달함."""
         if self.ldt_pwd.text() == '':
@@ -121,20 +121,6 @@ class DlgLogin(QDialog, dlg_class):
     def close_popup(self):
         self.close()
 
-    def req_login(self):
-        if self.ldt_email == "":
-            self.lb_warning_email.setText("이메일을 입력해주세요")
-        elif self.ldt_pwd == "":
-            self.lb_warning_pwd.setText("비밀번호를 입력하지 않았습니다.")
-        else:
-            login_result = self.db.select_user_info(column='user_pw, user_img, user_nm, user_state', user_email=self.ldt_email.text(), plus=f" user_pw='{self.ldt_pwd.text()}'")
-            if login_result in [None, 0]:
-                self.dlg.set_dialog_type(1, "pw_not_match")
-            else:
-                self.dlg.set_dialog_type(1, "login")
-                self.dlg.exec()
-                return login_result
-        return False
 
     def click_forgot_password(self):
         if self.ldt_email.text() == "":
